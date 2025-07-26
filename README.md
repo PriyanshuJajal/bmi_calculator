@@ -2,7 +2,7 @@
 
 A simple and responsive **BMI (Body Mass Index)** calculator built with **React**, allowing users to easily check their BMI in both **Metric** and **Imperial** units.  
 
-👉 **[Live Demo](https://PriyanshuJajal.github.io/BMI-CALC-REACT)**  
+👉 **[Live Demo] : https://priyanshujajal.github.io/bmi_calculator/**  
 
 ---
 
