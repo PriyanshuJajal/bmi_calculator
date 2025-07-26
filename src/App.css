@@ -1,38 +1,210 @@
 .App {
-  text-align: center;
+  width: 400px;
+  max-width: 900px; 
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header */
+.card-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 1.5rem;
+}
+
+.card-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-left: 0.75rem;
+}
+
+
+/* Unit Selector */
+.unit-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  background-color: #e9ecef;
+  border-radius: 10px;
+  padding: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.unit-selector button {
+  padding: 0.6rem 0;
+  border: none;
+  background-color: transparent;
+  color: #495057;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.unit-selector button.active {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.25);
+}
+
+
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+
+/* Hide number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Button Group - Switched to Flexbox for robustness */
+.btn-group {
+  display: flex; 
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  flex: 1; /* Make buttons share space equally */
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #28a745;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-primary:hover {
+  background-color: #218838;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-secondary {
+  background-color: #f1f3f5;
+  color: #495057;
+  border: 1px solid #dee2e6;
+}
+
+.btn-secondary:hover {
+  background-color: #e9ecef;
+}
+
+.btn-secondary svg {
+  margin-right: 0.5rem;
+}
+
+/* Result Area */
+.res-area {
+  margin-top: 2.5rem;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #e9ecef;
+}
+
+
+/* BMI Display for inline layout */
+.bmi-display {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.bmi-display-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.bmi-display-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.res-area .message {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+
+/* Message Colors */
+.text-underweight {
+  color: #fd7e14;
+}
+
+.text-normal {
+  color: #28a745;
+}
+
+.text-overweight {
+  color: #ffc107;
+}
+
+.text-obese {
+  color: #dc3545;
+}
+
+
+
+/* Error Message */
+.error-msg {
+  color: #dc3545;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1rem;
+  height: 1.2rem; /* Reserve space to prevent layout shift */
 }
